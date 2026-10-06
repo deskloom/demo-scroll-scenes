@@ -1,5 +1,5 @@
 /* products / product / contact / spec：演出なしの実用ページ */
-.page-main{padding:28px 0 72px}
+.page-main{padding-top:28px;padding-bottom:72px}
 .page-main h1{font-size:clamp(26px,5vw,36px);margin:0 0 6px}
 .note{color:var(--muted);margin:0 0 20px;max-width:46em}
 .crumbs{font-size:14px;margin:0 0 12px}
