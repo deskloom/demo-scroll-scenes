@@ -1,0 +1,8 @@
+{
+  "name": "demo-scroll-scenes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "灯野工業（架空）スクロール演出つき企業サイトの制作例",
+  "scripts": { "verify": "node scripts/verify.mjs", "start": "npx serve ." },
+  "devDependencies": { "playwright-core": "^1.50.0" }
+}

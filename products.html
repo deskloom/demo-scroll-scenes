@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>製品をさがす｜灯野工業（制作例）</title>
+<meta name="description" content="用途・設置環境・色温度・IP等級で絞り込める製品検索。品番検索、比較（3件まで）、お気に入り対応。すべて架空の製品です。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="site-header" id="site-header">
+  <div class="hdr-main">
+    <a class="brand" href="index.html" aria-label="灯野工業 トップへ">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#f2a93b"/><path d="M16 5c3 4 5 6 0 11-5-5-3-7 0-11Z" fill="#fff3c4"/><rect x="11" y="17" width="10" height="9" rx="3" fill="#2a1700"/></svg>
+      <span>灯野工業<small>Tomoshino Industries（架空）</small></span>
+    </a>
+    <a class="btn btn-primary" href="products.html" aria-current="page">製品をさがす</a>
+  </div>
+  <div class="hdr-tools">
+    <a href="index.html">トップ（演出あり）</a>
+    <button type="button" class="tool-btn" id="motion-toggle" aria-pressed="false">動きを減らす</button>
+    <a href="contact.html" class="hide-sm">お問い合わせ</a>
+  </div>
+</header>
+
+<main id="main" class="wrap page-main">
+  <h1>製品をさがす</h1>
+  <p class="note">演出のない検索ページです。条件を変えると結果がすぐ更新され、URLをコピーすれば同じ絞り込みを共有できます。掲載製品はすべて架空です。</p>
+
+  <form id="filter-form" role="search" aria-label="製品検索" autocomplete="off">
+    <div class="searchbar">
+      <label for="q">品番・キーワード</label>
+      <input id="q" name="q" type="search" placeholder="例：TM-LD-1203 ／ 防湿 ／ 投光器">
+    </div>
+    <details class="filters" id="filters" open>
+      <summary>絞り込み条件</summary>
+      <div class="filter-grid">
+        <fieldset id="f-use"><legend>用途</legend></fieldset>
+        <fieldset id="f-env"><legend>設置環境</legend></fieldset>
+        <div class="sel">
+          <label for="f-cct">色温度
+            <select id="f-cct"><option value="">指定なし</option><option value="warm">電球色（〜3000K）</option><option value="neutral">温白色（3000〜4500K）</option><option value="day">昼白色（4500〜5700K）</option><option value="cool">昼光色（5700K〜）</option></select></label>
+          <label for="f-ip">防塵・防水（IP等級）
+            <select id="f-ip"><option value="">指定なし</option><option value="40">IP40以上</option><option value="54">IP54以上</option><option value="65">IP65以上</option><option value="66">IP66以上</option></select></label>
+          <label for="f-price">価格帯
+            <select id="f-price"><option value="">指定なし</option><option value="1">¥（〜1万円）</option><option value="2">¥¥（1〜3万円）</option><option value="3">¥¥¥（3〜10万円）</option><option value="4">¥¥¥¥（10万円〜）</option></select></label>
+          <label class="check"><input type="checkbox" id="f-fav"> お気に入りのみ</label>
+          <button type="button" class="pill" id="btn-clear">条件をすべてクリア</button>
+        </div>
+      </div>
+    </details>
+  </form>
+
+  <div class="results-head">
+    <p id="count" role="status" aria-live="polite"></p>
+    <label>並び替え
+      <select id="sort"><option value="sku">品番順</option><option value="price-asc">価格帯が低い順</option><option value="price-desc">価格帯が高い順</option><option value="watt">消費電力が小さい順</option></select>
+    </label>
+  </div>
+
+  <section id="compare-panel" hidden aria-labelledby="cmp-title">
+    <h2 id="cmp-title">製品を比較（最大3件）</h2>
+    <div id="compare-body"></div>
+    <p><button type="button" class="pill" id="cmp-close">比較表を閉じる</button></p>
+  </section>
+
+  <ul id="results" class="grid" aria-label="検索結果"></ul>
+
+  <section class="recent" id="recent" hidden aria-labelledby="recent-title">
+    <h2 id="recent-title">最近見た製品</h2>
+    <ul id="recent-list"></ul>
+  </section>
+</main>
+
+<div class="compare-bar" id="compare-bar" hidden role="region" aria-label="比較リスト">
+  <strong id="cmp-count">比較 0/3</strong>
+  <span class="chips" id="cmp-chips"></span>
+  <button type="button" class="btn btn-primary" id="cmp-open">比較表を見る</button>
+  <button type="button" class="btn btn-ghost" id="cmp-clear">クリア</button>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p class="fiction">このサイトは制作例です。会社名・製品・人物はすべて架空です。</p>
+    <ul><li><a href="index.html">トップ</a></li><li><a href="products.html">製品をさがす</a></li><li><a href="contact.html">お問い合わせ（デモ）</a></li></ul>
+    <small>© 灯野工業（架空）／ ポートフォリオ用デモサイト</small>
+  </div>
+</footer>
+<script type="module" src="js/products.js"></script>
+</body>
+</html>

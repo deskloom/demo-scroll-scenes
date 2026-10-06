@@ -1,0 +1,94 @@
+/* index.html：スクロール演出 */
+body.page-index{background:var(--ink);color:#fff}
+.story{position:relative;background:var(--ink);color:#fff}
+.scene{position:relative;min-height:88vh;padding:calc(var(--hdr) + 28px) 20px 40px;display:grid;grid-template-columns:1fr;gap:24px;align-content:start;overflow:hidden;isolation:isolate}
+.scene-art{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.layer{position:absolute;left:-8%;width:116%;top:0;height:100%;will-change:transform}
+.layer svg{display:block;width:100%;height:100%}
+.scene-copy{position:relative;max-width:560px;background:rgba(7,10,30,.66);padding:16px 20px;border-radius:14px;border:1px solid rgba(255,255,255,.14)}
+.scene-no{margin:0 0 4px;font-size:12px;letter-spacing:.14em;color:#ffd9a0}
+.scene-copy h2{margin:0 0 6px;font-size:clamp(24px,5.5vw,38px)}
+.scene-copy p{margin:0 0 .6em}
+.scene-copy .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.actors{display:flex;align-items:flex-end;gap:12px;min-height:200px}
+.tomoru{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.tomoru-svg{width:96px;height:120px;flex:none;overflow:visible}
+.bubbles{display:grid;gap:12px;max-width:min(300px,76vw)}
+.bubble{margin:0;position:relative;background:#fff8e6;color:#241a05;padding:10px 14px;border-radius:16px;font-size:15px;font-weight:600;line-height:1.55;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.bubble::after{content:"";position:absolute;left:34px;bottom:-8px;width:16px;height:16px;background:inherit;transform:rotate(45deg);border-radius:0 0 4px 0}
+.bubble .who{display:block;font-size:11px;color:#7a4e00;font-weight:700;letter-spacing:.06em}
+
+/* スクラブ（ピン）モード：JSが .is-scrub を付けたときだけ */
+.story.is-scrub{height:100vh;height:100svh;overflow:hidden}
+.story.is-scrub .scene{position:absolute;inset:0;min-height:0;padding:0;display:block;pointer-events:none}
+.story.is-scrub .scene:nth-child(1){z-index:1}
+.story.is-scrub .scene:nth-child(2){z-index:2}
+.story.is-scrub .scene:nth-child(3){z-index:3}
+.story.is-scrub .scene:nth-child(4){z-index:4}
+.story.is-scrub .scene-copy{position:absolute;left:16px;right:16px;top:calc(var(--hdr) + 12px);max-width:520px;will-change:opacity}
+.story.is-scrub .actors{position:absolute;left:0;bottom:11vh;min-height:0;display:block;width:100%;height:0}
+.story.is-scrub .tomoru{position:absolute;left:0;bottom:0;width:max-content;will-change:transform}
+.story.is-scrub .bubbles{position:absolute;left:0;bottom:100%;width:max-content;margin-bottom:6px}
+.story.is-scrub .bubble{grid-area:1/1}
+.story.is-scrub .scene .cta a{pointer-events:auto}
+
+/* 進行表示 */
+.progress{position:fixed;z-index:90;display:none}
+.progress ol{list-style:none;margin:0;padding:0;display:flex;gap:8px}
+.progress a{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:12px;background:rgba(7,10,30,.78);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:6px 10px;min-height:32px}
+.progress a .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.5);flex:none}
+.progress a[aria-current="step"]{background:#fff;color:#111a3a}
+.progress a[aria-current="step"] .dot{background:#c77700}
+.progress .label{display:none}
+.progress a[aria-current="step"] .label{display:inline}
+.progress{left:0;right:0;bottom:10px;justify-content:center}
+.story-ready.in-story .progress{display:flex}
+.story-bar{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--amber);transform:scaleX(0);transform-origin:left;z-index:120;display:none}
+.story-ready .story-bar{display:block}
+@media (min-width:900px){
+  .progress{left:auto;right:18px;top:50%;bottom:auto;transform:translateY(-50%)}
+  .story-ready.in-story .progress{display:block}
+  .progress ol{flex-direction:column;align-items:flex-end}
+  .progress .label{display:inline}
+  .progress a:not([aria-current="step"]) .label{display:none}
+}
+@media (min-width:760px){
+  .tomoru-svg{width:130px;height:162px}
+  .bubbles{max-width:340px}
+  .bubble{font-size:16px}
+}
+/* 静止（動きを減らす）レイアウト */
+.story:not(.is-scrub) .bubbles{gap:16px}
+.story:not(.is-scrub) .bubble:not(:last-child)::after{display:none}
+@media (min-width:900px){
+  .story:not(.is-scrub) .scene{grid-template-columns:minmax(0,520px) 1fr;align-items:center;padding-left:48px;padding-right:48px}
+}
+
+/* ストーリー後：会社紹介・製品入口 */
+.after{background:var(--paper);color:var(--text);position:relative;z-index:5}
+.sec{padding:72px 0}
+.sec h2{font-size:clamp(24px,4.5vw,34px);margin:0 0 12px}
+.lede{max-width:46em;color:var(--muted)}
+.biz{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}
+.card{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.facts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:28px 0 0;padding:0;list-style:none}
+.facts li{border-left:4px solid var(--amber);padding:2px 0 2px 12px}
+.facts b{display:block;font-size:26px;color:var(--ink)}
+.entry{background:#eee9db}
+.entry-search{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 26px}
+.entry-search input{flex:1 1 240px;min-height:48px;font:inherit;padding:8px 14px;border:2px solid #8c8670;border-radius:10px;background:#fff}
+.cat-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));list-style:none;margin:0;padding:0}
+.cat-grid a{display:block;height:100%;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;transition:transform .2s,box-shadow .2s}
+.cat-grid a:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(13,18,48,.14)}
+.cat-grid b{display:block;font-size:18px;color:var(--ink)}
+.cat-grid span{font-size:14px;color:var(--muted)}
+.cat-grid svg{width:44px;height:44px;margin-bottom:6px}
+html[data-motion="reduce"] .cat-grid a{transition:none}
+html[data-motion="reduce"] .cat-grid a:hover{transform:none}
+.story.is-scrub .bubble{align-self:end}
+@media (max-width:759px){
+  .scene-copy{padding:12px 16px}
+  .scene-copy p{font-size:14px;line-height:1.6}
+  .scene-copy h1,.scene-copy h2{font-size:22px}
+}

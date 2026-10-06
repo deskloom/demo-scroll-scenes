@@ -1,0 +1,499 @@
+{
+ "summary": {
+  "checks": 85,
+  "passed": 85,
+  "failed": 0,
+  "consoleErrors": 0,
+  "externalRequests": 0,
+  "screenshots": 58
+ },
+ "results": [
+  {
+   "name": "横スクロールなし index@375",
+   "ok": true,
+   "detail": "scrollWidth=375 innerWidth=375"
+  },
+  {
+   "name": "index: ScrollTrigger pin 有効 @375",
+   "ok": true,
+   "detail": "{\"start\":-0.001,\"end\":2960,\"scenes\":4,\"scrub\":true}"
+  },
+  {
+   "name": "場面1 t=0.05 進行表示が場面1 @375",
+   "ok": true,
+   "detail": "current=0 bubbles=0,0,0,0,0,0,0,0"
+  },
+  {
+   "name": "場面1 t=0.3 進行表示が場面1 @375",
+   "ok": true,
+   "detail": "current=0 bubbles=1,0,0,0,0,0,0,0"
+  },
+  {
+   "name": "場面1 t=0.7 進行表示が場面1 @375",
+   "ok": true,
+   "detail": "current=0 bubbles=0,1,0,0,0,0,0,0"
+  },
+  {
+   "name": "場面2 t=0.3 進行表示が場面2 @375",
+   "ok": true,
+   "detail": "current=1 bubbles=0,0,1,0,0,0,0,0"
+  },
+  {
+   "name": "場面2 t=0.7 進行表示が場面2 @375",
+   "ok": true,
+   "detail": "current=1 bubbles=0,0,0,1,0,0,0,0"
+  },
+  {
+   "name": "場面3 t=0.3 進行表示が場面3 @375",
+   "ok": true,
+   "detail": "current=2 bubbles=0,0,0,0,1,0,0,0"
+  },
+  {
+   "name": "場面3 t=0.8 進行表示が場面3 @375",
+   "ok": true,
+   "detail": "current=2 bubbles=0,0,0,0,0,1,0,0"
+  },
+  {
+   "name": "場面4 t=0.3 進行表示が場面4 @375",
+   "ok": true,
+   "detail": "current=3 bubbles=0,0,0,0,0,0,1,0"
+  },
+  {
+   "name": "場面4 t=0.8 進行表示が場面4 @375",
+   "ok": true,
+   "detail": "current=3 bubbles=0,0,0,0,0,0,0,1"
+  },
+  {
+   "name": "ストーリー外では進行表示を隠す @375",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "横スクロールなし products@375",
+   "ok": true,
+   "detail": "scrollWidth=375 innerWidth=375"
+  },
+  {
+   "name": "横スクロールなし product@375",
+   "ok": true,
+   "detail": "scrollWidth=375 innerWidth=375"
+  },
+  {
+   "name": "横スクロールなし contact@375",
+   "ok": true,
+   "detail": "scrollWidth=375 innerWidth=375"
+  },
+  {
+   "name": "横スクロールなし spec@375",
+   "ok": true,
+   "detail": "scrollWidth=375 innerWidth=375"
+  },
+  {
+   "name": "横スクロールなし index@768",
+   "ok": true,
+   "detail": "scrollWidth=768 innerWidth=768"
+  },
+  {
+   "name": "index: ScrollTrigger pin 有効 @768",
+   "ok": true,
+   "detail": "{\"start\":-0.001,\"end\":4096,\"scenes\":4,\"scrub\":true}"
+  },
+  {
+   "name": "場面1 t=0.3 進行表示が場面1 @768",
+   "ok": true,
+   "detail": "current=0 bubbles=1,0,0,0,0,0,0,0"
+  },
+  {
+   "name": "場面2 t=0.3 進行表示が場面2 @768",
+   "ok": true,
+   "detail": "current=1 bubbles=0,0,1,0,0,0,0,0"
+  },
+  {
+   "name": "場面3 t=0.7 進行表示が場面3 @768",
+   "ok": true,
+   "detail": "current=2 bubbles=0,0,0,0,0,1,0,0"
+  },
+  {
+   "name": "場面4 t=0.5 進行表示が場面4 @768",
+   "ok": true,
+   "detail": "current=3 bubbles=0,0,0,0,0,0,0.33,0"
+  },
+  {
+   "name": "ストーリー外では進行表示を隠す @768",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "横スクロールなし products@768",
+   "ok": true,
+   "detail": "scrollWidth=768 innerWidth=768"
+  },
+  {
+   "name": "横スクロールなし product@768",
+   "ok": true,
+   "detail": "scrollWidth=768 innerWidth=768"
+  },
+  {
+   "name": "横スクロールなし contact@768",
+   "ok": true,
+   "detail": "scrollWidth=768 innerWidth=768"
+  },
+  {
+   "name": "横スクロールなし spec@768",
+   "ok": true,
+   "detail": "scrollWidth=768 innerWidth=768"
+  },
+  {
+   "name": "横スクロールなし index@1280",
+   "ok": true,
+   "detail": "scrollWidth=1280 innerWidth=1280"
+  },
+  {
+   "name": "index: ScrollTrigger pin 有効 @1280",
+   "ok": true,
+   "detail": "{\"start\":-0.001,\"end\":3200,\"scenes\":4,\"scrub\":true}"
+  },
+  {
+   "name": "場面1 t=0.05 進行表示が場面1 @1280",
+   "ok": true,
+   "detail": "current=0 bubbles=0,0,0,0,0,0,0,0"
+  },
+  {
+   "name": "場面1 t=0.3 進行表示が場面1 @1280",
+   "ok": true,
+   "detail": "current=0 bubbles=1,0,0,0,0,0,0,0"
+  },
+  {
+   "name": "場面1 t=0.7 進行表示が場面1 @1280",
+   "ok": true,
+   "detail": "current=0 bubbles=0,1,0,0,0,0,0,0"
+  },
+  {
+   "name": "場面2 t=0.3 進行表示が場面2 @1280",
+   "ok": true,
+   "detail": "current=1 bubbles=0,0,1,0,0,0,0,0"
+  },
+  {
+   "name": "場面2 t=0.7 進行表示が場面2 @1280",
+   "ok": true,
+   "detail": "current=1 bubbles=0,0,0,1,0,0,0,0"
+  },
+  {
+   "name": "場面3 t=0.3 進行表示が場面3 @1280",
+   "ok": true,
+   "detail": "current=2 bubbles=0,0,0,0,1,0,0,0"
+  },
+  {
+   "name": "場面3 t=0.8 進行表示が場面3 @1280",
+   "ok": true,
+   "detail": "current=2 bubbles=0,0,0,0,0,1,0,0"
+  },
+  {
+   "name": "場面4 t=0.3 進行表示が場面4 @1280",
+   "ok": true,
+   "detail": "current=3 bubbles=0,0,0,0,0,0,1,0"
+  },
+  {
+   "name": "場面4 t=0.8 進行表示が場面4 @1280",
+   "ok": true,
+   "detail": "current=3 bubbles=0,0,0,0,0,0,0,1"
+  },
+  {
+   "name": "ストーリー外では進行表示を隠す @1280",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "横スクロールなし products@1280",
+   "ok": true,
+   "detail": "scrollWidth=1280 innerWidth=1280"
+  },
+  {
+   "name": "横スクロールなし product@1280",
+   "ok": true,
+   "detail": "scrollWidth=1280 innerWidth=1280"
+  },
+  {
+   "name": "横スクロールなし contact@1280",
+   "ok": true,
+   "detail": "scrollWidth=1280 innerWidth=1280"
+  },
+  {
+   "name": "横スクロールなし spec@1280",
+   "ok": true,
+   "detail": "scrollWidth=1280 innerWidth=1280"
+  },
+  {
+   "name": "演出をスキップ → 製品入口が画面内に見える @375",
+   "ok": true,
+   "detail": "{\"top\":216,\"hdr\":102,\"y\":4534,\"focus\":\"products-entry\"}"
+  },
+  {
+   "name": "「製品をさがす」常時表示 @375",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "製品をさがす → products.html @375",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "演出をスキップ → 製品入口が画面内に見える @1280",
+   "ok": true,
+   "detail": "{\"top\":142,\"hdr\":65,\"y\":4408,\"focus\":\"products-entry\"}"
+  },
+  {
+   "name": "「製品をさがす」常時表示 @1280",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "製品をさがす → products.html @1280",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "音は既定OFF・AudioContext未生成",
+   "ok": true,
+   "detail": "{\"ac\":0,\"pressed\":\"false\"}"
+  },
+  {
+   "name": "音トグルON（aria-pressed=true, AudioContext生成）",
+   "ok": true,
+   "detail": "{\"ac\":1,\"pressed\":\"true\",\"txt\":\"ON\"}"
+  },
+  {
+   "name": "音トグルOFFへ戻る",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "prefers-reduced-motion: ピン/スクラブ/Lenisなし・全文表示 @375",
+   "ok": true,
+   "detail": "{\"scrub\":false,\"st\":0,\"pos\":\"relative\",\"motion\":\"reduce\",\"pressed\":\"true\",\"h\":2668,\"bubblesVisible\":true,\"lenis\":false}"
+  },
+  {
+   "name": "prefers-reduced-motion: ピン/スクラブ/Lenisなし・全文表示 @1280",
+   "ok": true,
+   "detail": "{\"scrub\":false,\"st\":0,\"pos\":\"relative\",\"motion\":\"reduce\",\"pressed\":\"true\",\"h\":2816,\"bubblesVisible\":true,\"lenis\":false}"
+  },
+  {
+   "name": "手動「動きを減らす」ON：静止レイアウト＋localStorage保存",
+   "ok": true,
+   "detail": "{\"scrub\":false,\"ls\":\"true\",\"st\":0}"
+  },
+  {
+   "name": "リロード後も設定が保持される",
+   "ok": true,
+   "detail": "{\"scrub\":false,\"pressed\":\"true\"}"
+  },
+  {
+   "name": "手動OFFで演出が復帰",
+   "ok": true,
+   "detail": "{\"scrub\":true,\"st\":1}"
+  },
+  {
+   "name": "製品24件を表示",
+   "ok": true,
+   "detail": "24"
+  },
+  {
+   "name": "用途フィルタで件数が減る",
+   "ok": true,
+   "detail": "7"
+  },
+  {
+   "name": "URLにuseが反映",
+   "ok": true,
+   "detail": "http://127.0.0.1:4173/products.html?use=%E5%B7%A5%E5%A0%B4%E3%83%BB%E5%80%89%E5%BA%AB"
+  },
+  {
+   "name": "設置環境フィルタ追加でさらに絞り込み",
+   "ok": true,
+   "detail": "3"
+  },
+  {
+   "name": "IP66以上フィルタが効く",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "条件クリアで24件に戻る",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "品番検索 TM-LD-1203 → 1件",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "品番検索（ハイフン省略 ld1203）→ 1件",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "キーワード「防湿」で絞り込み",
+   "ok": true,
+   "detail": "2"
+  },
+  {
+   "name": "0件時のメッセージ表示",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "共有URLから条件が復元される",
+   "ok": true,
+   "detail": "{\"n\":1,\"use\":true,\"price\":\"3\",\"q\":\"投光\"}"
+  },
+  {
+   "name": "比較は3件で上限（残りはdisabled）",
+   "ok": true,
+   "detail": "21"
+  },
+  {
+   "name": "比較バー表示",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "比較表：3製品×8項目",
+   "ok": true,
+   "detail": "{\"cols\":4,\"rows\":8,\"diff\":8}"
+  },
+  {
+   "name": "比較から外せる",
+   "ok": true,
+   "detail": "3"
+  },
+  {
+   "name": "お気に入りがリロード後も残る（2件）",
+   "ok": true,
+   "detail": "2"
+  },
+  {
+   "name": "お気に入りのみ表示",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "製品詳細：仕様表9行",
+   "ok": true,
+   "detail": "9"
+  },
+  {
+   "name": "ダミー仕様書リンクが spec.html",
+   "ok": true,
+   "detail": "spec.html?id=TM-SL-6001"
+  },
+  {
+   "name": "詳細→お問い合わせに ?sku= 付与",
+   "ok": true,
+   "detail": "contact.html?sku=TM-SL-6001"
+  },
+  {
+   "name": "最近見た製品に表示",
+   "ok": true,
+   "detail": "{\"hidden\":false,\"txt\":\"TM-SL-6001　LED街路灯 60W 電球色\"}"
+  },
+  {
+   "name": "印刷CSS：ヘッダー・操作ボタン非表示、印刷用見出し表示",
+   "ok": true,
+   "detail": "{\"hdr\":\"none\",\"act\":\"none\",\"po\":\"block\"}"
+  },
+  {
+   "name": "?sku= が品番欄に入る",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "空送信でエラー表示・要約へフォーカス",
+   "ok": true,
+   "detail": "{\"sum\":true,\"n\":6,\"invalid\":6,\"focus\":\"errsum\"}"
+  },
+  {
+   "name": "メール形式エラーを検出",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "送信後はデモ確認表示（送信しない）",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "フォーム送信でネットワークリクエストなし",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Tabでフォーカスが可視（outline）",
+   "ok": true,
+   "detail": "{\"tag\":\"A\",\"text\":\"灯野工業Tomoshin\",\"outline\":\"solid 3px\"}"
+  }
+ ],
+ "consoleErrors": [],
+ "externalRequests": [],
+ "screenshots": [
+  "screenshots/index-375-top.png",
+  "screenshots/index-375-scene1-05.png",
+  "screenshots/index-375-scene1-30.png",
+  "screenshots/index-375-scene1-70.png",
+  "screenshots/index-375-scene2-30.png",
+  "screenshots/index-375-scene2-70.png",
+  "screenshots/index-375-scene3-30.png",
+  "screenshots/index-375-scene3-80.png",
+  "screenshots/index-375-scene4-30.png",
+  "screenshots/index-375-scene4-80.png",
+  "screenshots/index-375-after-story.png",
+  "screenshots/products-375.png",
+  "screenshots/product-375.png",
+  "screenshots/contact-375.png",
+  "screenshots/spec-375.png",
+  "screenshots/index-768-top.png",
+  "screenshots/index-768-scene1-30.png",
+  "screenshots/index-768-scene2-30.png",
+  "screenshots/index-768-scene3-70.png",
+  "screenshots/index-768-scene4-50.png",
+  "screenshots/index-768-after-story.png",
+  "screenshots/products-768.png",
+  "screenshots/product-768.png",
+  "screenshots/contact-768.png",
+  "screenshots/spec-768.png",
+  "screenshots/index-1280-top.png",
+  "screenshots/index-1280-scene1-05.png",
+  "screenshots/index-1280-scene1-30.png",
+  "screenshots/index-1280-scene1-70.png",
+  "screenshots/index-1280-scene2-30.png",
+  "screenshots/index-1280-scene2-70.png",
+  "screenshots/index-1280-scene3-30.png",
+  "screenshots/index-1280-scene3-80.png",
+  "screenshots/index-1280-scene4-30.png",
+  "screenshots/index-1280-scene4-80.png",
+  "screenshots/index-1280-after-story.png",
+  "screenshots/products-1280.png",
+  "screenshots/product-1280.png",
+  "screenshots/contact-1280.png",
+  "screenshots/spec-1280.png",
+  "screenshots/index-375-skip-result.png",
+  "screenshots/index-1280-skip-result.png",
+  "screenshots/index-375-reduced-top.png",
+  "screenshots/index-375-reduced-full.png",
+  "screenshots/index-375-reduced-scene2.png",
+  "screenshots/index-375-reduced-scene3.png",
+  "screenshots/index-1280-reduced-top.png",
+  "screenshots/index-1280-reduced-full.png",
+  "screenshots/index-1280-reduced-scene2.png",
+  "screenshots/index-1280-reduced-scene3.png",
+  "screenshots/products-1280-empty.png",
+  "screenshots/products-1280-compare.png",
+  "screenshots/products-375-filtered.png",
+  "screenshots/products-768-filtered.png",
+  "screenshots/product-print-preview.png",
+  "screenshots/contact-1280-errors.png",
+  "screenshots/contact-1280-done.png",
+  "screenshots/index-1280-focus.png"
+ ]
+}

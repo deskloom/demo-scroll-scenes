@@ -1,0 +1,58 @@
+/* 共通：トークン・ヘッダー・フッター・ボタン */
+:root{
+  --ink:#0d1230; --ink-2:#1b2550; --paper:#f7f5ef; --paper-2:#ffffff; --line:#d9d4c7;
+  --text:#1c2033; --muted:#555a70;
+  --amber:#f2a93b; --amber-ink:#2a1700; --link:#1b4fd8; --focus:#1b4fd8; --focus-dark:#ffd36b;
+  --hdr:96px;
+  --font:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo","Noto Sans JP",system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);color:var(--text);background:var(--paper);line-height:1.75;font-size:16px}
+img,svg{max-width:100%}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.dark-ui :focus-visible,.site-header :focus-visible,.site-footer :focus-visible{outline-color:var(--focus-dark)}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:8px;top:-60px;z-index:200;background:#fff;color:#000;padding:10px 14px;border-radius:6px;font-weight:700}
+.skip:focus{top:8px}
+[id]{scroll-margin-top:calc(var(--hdr) + 12px)}
+
+/* ヘッダー */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(10,14,36,.92);color:#fff;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2px 16px;padding:8px 16px;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.12)}
+.hdr-main{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:1 1 100%}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700;line-height:1.2}
+.brand small{display:block;font-weight:400;font-size:11px;opacity:.8;letter-spacing:.04em}
+.brand svg{width:30px;height:30px;flex:none}
+.hdr-tools{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;flex:1 1 100%;font-size:13px}
+.hdr-tools a,.tool-btn{color:#e9ecff;background:none;border:0;font:inherit;padding:6px 2px;min-height:32px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.tool-btn{text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px}
+.tool-btn[aria-pressed="true"]{background:#fff;color:#111a3a;border-color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 20px;border-radius:999px;
+  font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn-primary{background:var(--amber);color:var(--amber-ink)}
+.btn-primary:hover{background:#ffc15e}
+.btn-ghost{background:transparent;border-color:currentColor;color:inherit}
+.btn-dark{background:var(--ink);color:#fff}
+@media (min-width:900px){
+  .site-header{flex-wrap:nowrap;padding:8px 28px}
+  .hdr-main{flex:0 0 auto;gap:28px}
+  .hdr-tools{flex:1 1 auto;justify-content:flex-end;font-size:14px}
+  :root{--hdr:64px}
+}
+body{padding-top:var(--hdr)}
+body.page-index{padding-top:0}
+
+/* フッター */
+.site-footer{background:var(--ink);color:#dfe3ff;padding:36px 20px 44px;font-size:14px}
+.site-footer .inner{max-width:1100px;margin:0 auto;display:grid;gap:14px}
+.site-footer .fiction{font-weight:700;font-size:15px;border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:10px 14px;color:#fff;margin:0}
+.site-footer a{color:#cfd6ff}
+.site-footer ul{list-style:none;padding:0;margin:0;display:flex;gap:18px;flex-wrap:wrap}
+
+main{display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.35}
+@media (max-width:520px){.hide-sm{display:none!important}}

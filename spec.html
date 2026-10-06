@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>仕様書（ダミー）｜灯野工業（制作例）</title>
+<style>
+  body{font-family:"Hiragino Sans","Yu Gothic UI","Meiryo",system-ui,sans-serif;max-width:760px;margin:0 auto;padding:24px 20px 60px;line-height:1.7;color:#1c2033}
+  .banner{border:3px dashed #b4541f;background:#fff4ec;padding:10px 14px;font-weight:700;border-radius:8px}
+  table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #888;padding:8px 10px;text-align:left}th{background:#eee9db;width:9em}
+  h1{font-size:24px;margin:20px 0 4px}.sku{font-family:ui-monospace,Consolas,monospace;font-weight:700}
+  a{color:#1b4fd8}:focus-visible{outline:3px solid #1b4fd8;outline-offset:3px}
+  @media print{.noprint{display:none}}
+</style>
+</head>
+<body>
+<p class="banner">これは制作例のためのダミー仕様書（HTML）です。PDFではなく、会社・製品はすべて架空です。</p>
+<div id="spec">読み込み中…</div>
+<p class="noprint"><a href="products.html">製品一覧へ戻る</a>　<button type="button" onclick="window.print()">印刷する</button></p>
+<script type="module">
+  import { loadProducts, cctText, wattText, lumenText, priceMark } from './js/common.js';
+  const id = new URLSearchParams(location.search).get('id') || '';
+  const el = document.getElementById('spec');
+  try {
+    const p = (await loadProducts()).find((x) => x.id === id);
+    if (!p) { el.textContent = '該当する製品がありません。'; }
+    else {
+      document.title = `仕様書（ダミー）${p.id}｜灯野工業（制作例）`;
+      const rows = [['品番', p.id], ['形状', p.type], ['用途', p.use.join('・')], ['設置環境', p.env.join('・')], ['色温度', cctText(p)], ['消費電力', wattText(p)], ['光束', lumenText(p)], ['IP等級', 'IP' + p.ip], ['価格帯の目安', priceMark(p) + ' ' + p.priceText]];
+      const mkp = (cls, txt) => { const e = document.createElement('p'); if (cls) e.className = cls; e.textContent = txt; return e; };
+      const h1 = document.createElement('h1'); h1.textContent = p.name;
+      const table = document.createElement('table');
+      rows.forEach(([k, v]) => { const tr = table.insertRow(); const th = document.createElement('th'); th.scope = 'row'; th.textContent = k; tr.appendChild(th); tr.insertCell().textContent = v; });
+      el.replaceChildren(mkp('', '灯野工業（架空）　製品仕様書　見本'), h1, mkp('sku', p.id), mkp('', p.desc), table, mkp('', '発行：（ダミー）／ 改訂：なし／ この資料に記載の数値は実在のものではありません。'));
+    }
+  } catch (e) { el.textContent = 'データを読み込めませんでした。'; }
+</script>
+</body>
+</html>

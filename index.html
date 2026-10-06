@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ja" data-motion="full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>灯野工業（制作例）｜あかりをつくるメーカーの公式サイト</title>
+<meta name="description" content="スクロールで場面が切り替わる世界観演出と、すばやい製品検索を両立した企業サイトの制作例。会社・製品はすべて架空です。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/story.css">
+<link rel="stylesheet" href="vendor/lenis.css">
+</head>
+<body class="page-index">
+<a class="skip" href="#main">本文へスキップ</a>
+
+<!-- キャラクター「ともる」（全場面で共有。表情はCSS変数で変える） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="tomoru-g">
+      <path d="M40 20 Q50 4 60 20" fill="none" stroke="#c9a15a" stroke-width="4" stroke-linecap="round"/>
+      <g style="transform-box:fill-box;transform-origin:50% 100%;transform:scale(var(--flame,1));opacity:var(--glow,1)">
+        <path d="M50 -6 C60 6 64 12 50 22 C36 12 40 6 50 -6Z" fill="#ffae3b"/>
+        <path d="M50 4 C55 10 56 14 50 19 C44 14 45 10 50 4Z" fill="#fff3c4"/>
+      </g>
+      <rect x="33" y="22" width="34" height="10" rx="4" fill="#7a5a2c"/>
+      <path d="M30 32 H70 Q86 62 75 98 Q70 110 50 110 Q30 110 25 98 Q14 62 30 32Z" fill="#f6d28b" stroke="#8a5a1d" stroke-width="3"/>
+      <ellipse cx="50" cy="72" rx="20" ry="26" fill="#ffe9b0" opacity="var(--glow,1)"/>
+      <ellipse cx="41" cy="66" rx="3.6" ry="5.2" fill="#3a2508" style="transform-box:fill-box;transform-origin:center;transform:scaleY(var(--eye,1))"/>
+      <ellipse cx="59" cy="66" rx="3.6" ry="5.2" fill="#3a2508" style="transform-box:fill-box;transform-origin:center;transform:scaleY(var(--eye,1))"/>
+      <path d="M44 79 Q50 85 56 79" fill="none" stroke="#3a2508" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="34" cy="76" r="4" fill="#f08a6a" opacity=".55"/><circle cx="66" cy="76" r="4" fill="#f08a6a" opacity=".55"/>
+      <ellipse cx="40" cy="114" rx="9" ry="4" fill="#7a5a2c"/><ellipse cx="60" cy="114" rx="9" ry="4" fill="#7a5a2c"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="site-header" id="site-header">
+  <div class="hdr-main">
+    <a class="brand" href="index.html" aria-label="灯野工業 トップへ">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#f2a93b"/><path d="M16 5c3 4 5 6 0 11-5-5-3-7 0-11Z" fill="#fff3c4"/><rect x="11" y="17" width="10" height="9" rx="3" fill="#2a1700"/></svg>
+      <span>灯野工業<small>Tomoshino Industries（架空）</small></span>
+    </a>
+    <a class="btn btn-primary" href="products.html" id="btn-products">製品をさがす</a>
+  </div>
+  <div class="hdr-tools">
+    <a href="#products-entry" id="skip-story">演出をスキップ</a>
+    <button type="button" class="tool-btn" id="motion-toggle" aria-pressed="false">動きを減らす</button>
+    <button type="button" class="tool-btn" id="sound-toggle" aria-pressed="false">音 <span aria-hidden="true" class="state">OFF</span></button>
+    <a href="contact.html" class="hide-sm">お問い合わせ</a>
+  </div>
+</header>
+<div class="story-bar" id="story-bar" aria-hidden="true"></div>
+<nav class="progress" id="progress" aria-label="場面の進行（全4場面）">
+  <ol>
+    <li><a href="#scene-1" aria-label="場面1 夜の工房"><span class="dot"></span><span class="label">1 夜の工房</span></a></li>
+    <li><a href="#scene-2" aria-label="場面2 光が生まれる"><span class="dot"></span><span class="label">2 光が生まれる</span></a></li>
+    <li><a href="#scene-3" aria-label="場面3 街に灯る"><span class="dot"></span><span class="label">3 街に灯る</span></a></li>
+    <li><a href="#scene-4" aria-label="場面4 製品へ"><span class="dot"></span><span class="label">4 製品へ</span></a></li>
+  </ol>
+</nav>
+
+<main id="main">
+<div class="story" id="story">
+
+<!-- 場面1：夜の工房 -->
+<section class="scene" id="scene-1" data-scene="1" aria-labelledby="s1-title">
+  <div class="scene-art" role="img" aria-label="星の出た夜空の下、静かに建つ工房のシルエット。窓はまだ暗い。">
+    <div class="layer layer-bg"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="g1a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#060a22"/><stop offset="1" stop-color="#22306a"/></linearGradient>
+      <radialGradient id="g1m"><stop offset="0" stop-color="#f4efd8" stop-opacity=".35"/><stop offset="1" stop-color="#f4efd8" stop-opacity="0"/></radialGradient></defs>
+      <rect width="1600" height="900" fill="url(#g1a)"/>
+      <g class="stars" data-n="60" fill="#fff"><circle cx="640" cy="120" r="2.2"/><circle cx="900" cy="80" r="1.8"/><circle cx="760" cy="230" r="1.6"/></g>
+      <g class="moon"><circle cx="1010" cy="200" r="120" fill="url(#g1m)"/><circle cx="1010" cy="200" r="52" fill="#f4efd8"/></g>
+    </svg></div>
+    <div class="layer layer-mid"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <path d="M0 650 Q250 560 520 630 T1060 610 T1600 640 V900 H0Z" fill="#141c48"/>
+      <g class="smoke" fill="#8f9bd6" opacity=".22"><circle cx="952" cy="350" r="14"/><circle cx="966" cy="320" r="19"/><circle cx="986" cy="282" r="24"/></g>
+      <rect x="930" y="380" width="44" height="90" fill="#0b1030"/>
+      <rect x="560" y="470" width="480" height="300" fill="#0e1436"/>
+      <polygon points="530,472 800,356 1070,472" fill="#080c26"/>
+      <rect x="600" y="520" width="90" height="80" fill="#1b2559"/><rect x="720" y="520" width="90" height="80" fill="#5a4a2e"/><rect x="840" y="520" width="90" height="80" fill="#1b2559"/>
+      <rect x="760" y="640" width="70" height="130" fill="#060a1f"/>
+      <circle cx="800" cy="430" r="26" fill="none" stroke="#2a3678" stroke-width="12" stroke-dasharray="9 9"/><circle cx="800" cy="430" r="10" fill="#0e1436"/>
+    </svg></div>
+    <div class="layer layer-fore"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <rect x="0" y="770" width="1600" height="130" fill="#070b20"/>
+      <rect x="470" y="720" width="90" height="60" fill="#0b1030"/><rect x="1060" y="730" width="70" height="50" fill="#0b1030"/><rect x="1130" y="705" width="46" height="75" fill="#0b1030"/>
+      <path d="M0 790 q40-30 80 0 q40-40 80 0 q40-30 80 0 V900 H0Z" fill="#05081a"/>
+    </svg></div>
+  </div>
+  <div class="scene-copy">
+    <p class="scene-no">1 / 4　夜の工房</p>
+    <h1 id="s1-title">あかりは、夜の工房から生まれる。</h1>
+    <p>灯野工業（架空）は、照明と光学部品をつくるメーカーです。スクロールして、小さな案内役「ともる」と物語をたどってください。</p>
+  </div>
+  <div class="actors"><div class="tomoru" data-from="6" data-to="26" data-from-m="3" data-to-m="22">
+    <div class="bubbles">
+      <p class="bubble"><span class="who">ともる</span>……ふぁ。もう夜なんだね。</p>
+      <p class="bubble"><span class="who">ともる</span>ここは灯野工業の工房。ぼくは、明かりがともるのを待ってるんだ。</p>
+    </div>
+    <svg class="tomoru-svg" viewBox="-6 -10 112 134" style="--flame:.35;--glow:.35;--eye:.15" aria-hidden="true" focusable="false"><use href="#tomoru-g"/></svg>
+  </div></div>
+</section>
+
+<!-- 場面2：光が生まれる -->
+<section class="scene" id="scene-2" data-scene="2" aria-labelledby="s2-title">
+  <div class="scene-art" role="img" aria-label="工房の窓に灯がともり、光の筋が放射状に広がる。プリズムを通った光が虹色に分かれる。">
+    <div class="layer layer-bg"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="g2a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1250"/><stop offset=".6" stop-color="#4b2c7c"/><stop offset="1" stop-color="#b5563f"/></linearGradient>
+      <radialGradient id="g2g"><stop offset="0" stop-color="#fff0b8" stop-opacity=".95"/><stop offset=".4" stop-color="#ffc45c" stop-opacity=".45"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient></defs>
+      <rect width="1600" height="900" fill="url(#g2a)"/>
+      <g class="stars" data-n="30" fill="#fff" opacity=".7"><circle cx="620" cy="110" r="2"/><circle cx="1000" cy="150" r="2"/></g>
+      <g class="rays" fill="#ffe7a8" opacity=".16" style="transform-box:fill-box;transform-origin:50% 100%"></g>
+      <g class="glow" style="transform-box:fill-box;transform-origin:center"><circle cx="800" cy="560" r="460" fill="url(#g2g)"/></g>
+    </svg></div>
+    <div class="layer layer-mid"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <path d="M0 650 Q250 580 520 640 T1060 620 T1600 650 V900 H0Z" fill="#2a1d57"/>
+      <rect x="930" y="380" width="44" height="90" fill="#1b1442"/>
+      <rect x="560" y="470" width="480" height="300" fill="#231a52"/>
+      <polygon points="530,472 800,356 1070,472" fill="#150f38"/>
+      <rect x="600" y="520" width="90" height="80" fill="#ffd27a"/><rect x="720" y="520" width="90" height="80" fill="#ffe6a0"/><rect x="840" y="520" width="90" height="80" fill="#ffd27a"/>
+      <rect x="760" y="640" width="70" height="130" fill="#120c30"/>
+      <circle cx="800" cy="430" r="26" fill="none" stroke="#4b3c9a" stroke-width="12" stroke-dasharray="9 9"/><circle cx="800" cy="430" r="10" fill="#231a52"/>
+      <g class="optics">
+        <polygon points="330,690 390,580 450,690" fill="rgba(255,255,255,.28)" stroke="#fff" stroke-width="3"/>
+        <g class="beam" style="transform-box:fill-box;transform-origin:0% 50%" stroke-width="6" stroke-linecap="round" fill="none">
+          <line x1="150" y1="640" x2="372" y2="640" stroke="#fff"/>
+          <line x1="410" y1="640" x2="560" y2="580" stroke="#ff6b6b"/><line x1="410" y1="640" x2="560" y2="610" stroke="#ffb84a"/><line x1="410" y1="640" x2="560" y2="640" stroke="#ffe85a"/><line x1="410" y1="640" x2="560" y2="670" stroke="#6bd68a"/><line x1="410" y1="640" x2="560" y2="700" stroke="#6bb4ff"/>
+        </g>
+      </g>
+    </svg></div>
+    <div class="layer layer-fore"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <g class="motes" fill="#ffe7a8"><circle cx="600" cy="740" r="4"/><circle cx="700" cy="760" r="3"/><circle cx="820" cy="730" r="5"/><circle cx="930" cy="750" r="3"/><circle cx="1010" cy="735" r="4"/><circle cx="760" cy="780" r="3"/></g>
+      <rect x="0" y="770" width="1600" height="130" fill="#150f38"/>
+      <rect x="470" y="720" width="90" height="60" fill="#1d1546"/><rect x="1060" y="730" width="70" height="50" fill="#1d1546"/><rect x="1130" y="705" width="46" height="75" fill="#1d1546"/>
+    </svg></div>
+  </div>
+  <div class="scene-copy">
+    <p class="scene-no">2 / 4　光が生まれる</p>
+    <h2 id="s2-title">光を、行かせたい場所へ。</h2>
+    <p>光源だけでなく、光を導くレンズや拡散パネルまで。光学部品の設計から、あかりの形をつくります（架空の設定です）。</p>
+  </div>
+  <div class="actors"><div class="tomoru" data-from="8" data-to="30" data-from-m="3" data-to-m="22">
+    <div class="bubbles">
+      <p class="bubble"><span class="who">ともる</span>わっ、芯があたたまってきた……！</p>
+      <p class="bubble"><span class="who">ともる</span>レンズを通すと、光は行きたい方向へまっすぐ進むんだよ。</p>
+    </div>
+    <svg class="tomoru-svg" viewBox="-6 -10 112 134" style="--flame:.8;--glow:.8;--eye:1" aria-hidden="true" focusable="false"><use href="#tomoru-g"/></svg>
+  </div></div>
+</section>
+
+<!-- 場面3：街に灯る -->
+<section class="scene" id="scene-3" data-scene="3" aria-labelledby="s3-title">
+  <div class="scene-art" role="img" aria-label="夕暮れの街。ビルの窓や街路灯に、ひとつずつ明かりがともっていく。">
+    <div class="layer layer-bg"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="g3a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2060"/><stop offset=".7" stop-color="#b8566a"/><stop offset="1" stop-color="#f09a5c"/></linearGradient>
+      <linearGradient id="g3b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1236"/><stop offset=".8" stop-color="#2d2a6a"/><stop offset="1" stop-color="#5a3a78"/></linearGradient>
+      <radialGradient id="g3s"><stop offset="0" stop-color="#ffd9a0" stop-opacity=".9"/><stop offset="1" stop-color="#ffd9a0" stop-opacity="0"/></radialGradient></defs>
+      <rect width="1600" height="900" fill="url(#g3a)"/>
+      <rect class="sky-b" width="1600" height="900" fill="url(#g3b)" opacity="0"/>
+      <ellipse class="horizon-glow" cx="800" cy="660" rx="620" ry="190" fill="url(#g3s)"/>
+      <g class="stars" data-n="40" fill="#fff" opacity=".0"></g>
+      <g class="city-far" fill="#2a2058">
+        <rect class="bld" x="120" y="520" width="110" height="260"/><rect class="bld" x="260" y="470" width="90" height="310"/><rect class="bld" x="380" y="540" width="130" height="240"/>
+        <rect class="bld" x="540" y="500" width="100" height="280"/><rect class="bld" x="670" y="440" width="120" height="340"/><rect class="bld" x="820" y="520" width="110" height="260"/>
+        <rect class="bld" x="960" y="480" width="90" height="300"/><rect class="bld" x="1080" y="540" width="130" height="240"/><rect class="bld" x="1240" y="470" width="100" height="310"/><rect class="bld" x="1370" y="530" width="120" height="250"/>
+      </g>
+      <g class="wins-far"></g>
+    </svg></div>
+    <div class="layer layer-mid"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <g class="city-near" fill="#171244">
+        <rect class="bld" x="60" y="560" width="150" height="230"/><rect class="bld" x="230" y="500" width="130" height="290"/><rect class="bld" x="480" y="580" width="140" height="210"/>
+        <rect class="bld" x="640" y="520" width="170" height="270"/><rect class="bld" x="830" y="590" width="140" height="200"/><rect class="bld" x="1000" y="510" width="150" height="280"/>
+        <rect class="bld" x="1180" y="570" width="140" height="220"/><rect class="bld" x="1340" y="520" width="170" height="270"/>
+        <rect x="700" y="400" width="8" height="120"/><circle cx="704" cy="396" r="6" fill="#ff6b6b"/>
+      </g>
+      <g class="wins-near"></g>
+    </svg></div>
+    <div class="layer layer-fore"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs><radialGradient id="g3l"><stop offset="0" stop-color="#ffe3a0" stop-opacity=".9"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient></defs>
+      <rect x="0" y="780" width="1600" height="120" fill="#0d0a2a"/>
+      <rect x="0" y="780" width="1600" height="6" fill="#2b2260"/>
+      <g class="lamps">
+        <g class="lamp"><rect x="446" y="610" width="8" height="172" fill="#05041a"/><rect x="430" y="602" width="40" height="10" rx="4" fill="#05041a"/><circle class="lamp-glow" cx="450" cy="622" r="100" fill="url(#g3l)" style="transform-box:fill-box;transform-origin:center"/></g>
+        <g class="lamp"><rect x="656" y="610" width="8" height="172" fill="#05041a"/><rect x="640" y="602" width="40" height="10" rx="4" fill="#05041a"/><circle class="lamp-glow" cx="660" cy="622" r="100" fill="url(#g3l)" style="transform-box:fill-box;transform-origin:center"/></g>
+        <g class="lamp"><rect x="936" y="610" width="8" height="172" fill="#05041a"/><rect x="920" y="602" width="40" height="10" rx="4" fill="#05041a"/><circle class="lamp-glow" cx="940" cy="622" r="100" fill="url(#g3l)" style="transform-box:fill-box;transform-origin:center"/></g>
+        <g class="lamp"><rect x="1146" y="610" width="8" height="172" fill="#05041a"/><rect x="1130" y="602" width="40" height="10" rx="4" fill="#05041a"/><circle class="lamp-glow" cx="1150" cy="622" r="100" fill="url(#g3l)" style="transform-box:fill-box;transform-origin:center"/></g>
+      </g>
+    </svg></div>
+  </div>
+  <div class="scene-copy">
+    <p class="scene-no">3 / 4　街に灯る</p>
+    <h2 id="s3-title">暮らしの場所に、あかりが届く。</h2>
+    <p>工場、オフィス、店舗、街路。使う場所ごとに求められる光は違います。夕暮れの街に、ひとつずつ灯がともっていきます。</p>
+  </div>
+  <div class="actors"><div class="tomoru" data-from="6" data-to="30" data-from-m="3" data-to-m="22">
+    <div class="bubbles">
+      <p class="bubble"><span class="who">ともる</span>見て、窓にひとつずつ灯がついていく。</p>
+      <p class="bubble"><span class="who">ともる</span>工場も、オフィスも、通りも。いろんな場所で、いろんな光が働いてるんだ。</p>
+    </div>
+    <svg class="tomoru-svg" viewBox="-6 -10 112 134" style="--flame:1;--glow:1;--eye:1" aria-hidden="true" focusable="false"><use href="#tomoru-g"/></svg>
+  </div></div>
+</section>
+
+<!-- 場面4：製品へ -->
+<section class="scene" id="scene-4" data-scene="4" aria-labelledby="s4-title">
+  <div class="scene-art" role="img" aria-label="夜明け前の空に、ペンダント・ダウンライト・スポット・高天井用の4種類の照明のシルエットが浮かぶ。">
+    <div class="layer layer-bg"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs><linearGradient id="g4a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c2a50"/><stop offset=".65" stop-color="#2f5d86"/><stop offset="1" stop-color="#e59a62"/></linearGradient>
+      <linearGradient id="g4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c4a78"/><stop offset=".6" stop-color="#e0a070"/><stop offset="1" stop-color="#ffd9a0"/></linearGradient>
+      <radialGradient id="g4s"><stop offset="0" stop-color="#fff2c8" stop-opacity="1"/><stop offset=".5" stop-color="#ffc878" stop-opacity=".5"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient></defs>
+      <rect width="1600" height="900" fill="url(#g4a)"/>
+      <rect class="sky-b" width="1600" height="900" fill="url(#g4b)" opacity="0"/>
+      <g class="stars" data-n="30" fill="#fff" opacity=".6"></g>
+      <g class="sun" style="transform-box:fill-box;transform-origin:center"><circle cx="800" cy="700" r="260" fill="url(#g4s)"/></g>
+    </svg></div>
+    <div class="layer layer-mid"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <path d="M0 720 Q300 650 600 700 T1200 690 T1600 710 V900 H0Z" fill="#17304f"/>
+      <g class="prods" stroke="#0a1730" stroke-width="3" transform="translate(110 170)">
+        <g class="prod"><line x1="560" y1="180" x2="560" y2="330" stroke="#0a1730" stroke-width="3"/><path d="M520 400 Q520 330 560 330 Q600 330 600 400Z" fill="#f4d9a0"/><circle cx="560" cy="412" r="22" fill="#fff3c4" stroke="none"/></g>
+        <g class="prod"><rect x="690" y="250" width="70" height="44" rx="6" fill="#d8dce8"/><rect x="700" y="294" width="50" height="14" fill="#fff3c4" stroke="none"/><circle cx="725" cy="330" r="30" fill="#ffe7a8" opacity=".6" stroke="none"/></g>
+        <g class="prod"><line x1="870" y1="180" x2="870" y2="300" stroke="#0a1730" stroke-width="3"/><g transform="rotate(25 870 330)"><rect x="845" y="300" width="50" height="76" rx="10" fill="#c7cde0"/><ellipse cx="870" cy="378" rx="24" ry="7" fill="#fff3c4" stroke="none"/></g><path d="M885 395 L940 480 L850 470Z" fill="#ffe7a8" opacity=".35" stroke="none"/></g>
+        <g class="prod"><path d="M1000 330 Q1060 250 1120 330Z" fill="#aeb6cc"/><rect x="1056" y="330" width="8" height="14" fill="#fff3c4" stroke="none"/><path d="M1060 344 L1110 450 L1010 450Z" fill="#ffe7a8" opacity=".3" stroke="none"/></g>
+      </g>
+    </svg></div>
+    <div class="layer layer-fore"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <rect x="0" y="780" width="1600" height="120" fill="#0e2038"/>
+      <rect x="0" y="780" width="1600" height="5" fill="#e59a62"/>
+    </svg></div>
+  </div>
+  <div class="scene-copy">
+    <p class="scene-no">4 / 4　製品へ</p>
+    <h2 id="s4-title">用途から、すぐ製品へ。</h2>
+    <p>演出はここまで。探している製品が決まっているなら、いつでも検索へ進めます。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="products.html" data-cta>製品をさがす</a>
+      <a class="btn btn-ghost" href="#products-entry" data-cta>用途から選ぶ</a>
+    </div>
+  </div>
+  <div class="actors"><div class="tomoru" data-from="6" data-to="30" data-from-m="3" data-to-m="22">
+    <div class="bubbles">
+      <p class="bubble"><span class="who">ともる</span>使う場所に合わせて、光の種類もいろいろあるよ。</p>
+      <p class="bubble"><span class="who">ともる</span>さがしている製品があるなら、すぐ検索へどうぞ！</p>
+    </div>
+    <svg class="tomoru-svg" viewBox="-6 -10 112 134" style="--flame:1.15;--glow:1;--eye:1" aria-hidden="true" focusable="false"><use href="#tomoru-g"/></svg>
+  </div></div>
+</section>
+
+</div><!-- /story -->
+
+<div class="after">
+  <section class="sec" id="company" aria-labelledby="company-title">
+    <div class="wrap">
+      <h2 id="company-title">灯野工業について</h2>
+      <p class="lede">灯野工業は、照明器具と光学部品を設計・製造するメーカーです（架空の会社です）。工場や倉庫、オフィス、店舗、屋外まで、使う場所に合わせた「ちょうどいい光」を届けることを仕事にしています。</p>
+      <div class="biz">
+        <article class="card"><h3>照明器具の設計・製造</h3><p>ダウンライトからハイベイ、街路灯まで。設置環境に合わせた防塵・防湿仕様を用意します。</p></article>
+        <article class="card"><h3>光学部品のOEM供給</h3><p>配光制御レンズ、拡散パネル、反射板。仕様に合わせた別注にも対応します。</p></article>
+        <article class="card"><h3>改修・更新の相談</h3><p>既存設備の入れ替えや、明るさ・消費電力の見直しをご相談いただけます。</p></article>
+      </div>
+      <ul class="facts" aria-label="会社概要（すべて架空の数字です）">
+        <li><b>1962年</b>創業（架空）</li><li><b>24機種</b>このサイトの掲載製品（架空）</li><li><b>6用途</b>工場から研究施設まで</li>
+      </ul>
+    </div>
+  </section>
+  <section class="sec entry" id="products-entry" tabindex="-1" aria-labelledby="entry-title">
+    <div class="wrap">
+      <h2 id="entry-title">製品をさがす</h2>
+      <p class="lede">品番・キーワードで探すか、用途から絞り込めます。</p>
+      <form class="entry-search" action="products.html" method="get" role="search">
+        <label class="sr-only" for="entry-q">品番・キーワード</label>
+        <input id="entry-q" name="q" type="search" placeholder="例：TM-LD-1203　／　防湿　／　投光器" autocomplete="off">
+        <button class="btn btn-dark" type="submit">検索する</button>
+      </form>
+      <ul class="cat-grid">
+        <li><a href="products.html?use=工場・倉庫"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M6 36V16l10 6V16l10 6V10h12v26Z" fill="#0d1230"/></svg><b>工場・倉庫</b><span>高天井用・耐環境ライン</span></a></li>
+        <li><a href="products.html?use=オフィス"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="8" y="8" width="28" height="28" rx="3" fill="#0d1230"/><path d="M14 16h16M14 22h16M14 28h10" stroke="#f2a93b" stroke-width="3"/></svg><b>オフィス</b><span>ベースライト・ダウンライト</span></a></li>
+        <li><a href="products.html?use=店舗・商業施設"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M6 16l4-8h24l4 8v4H6Z" fill="#0d1230"/><rect x="9" y="22" width="26" height="14" fill="#0d1230"/></svg><b>店舗・商業施設</b><span>スポット・ペンダント</span></a></li>
+        <li><a href="products.html?use=屋外・街路"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="20" y="10" width="4" height="26" fill="#0d1230"/><path d="M12 12h20" stroke="#0d1230" stroke-width="4"/><circle cx="22" cy="16" r="5" fill="#f2a93b"/></svg><b>屋外・街路</b><span>投光器・街路灯</span></a></li>
+        <li><a href="products.html?use=医療・研究施設"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M17 6h10v10l8 18H9l8-18Z" fill="#0d1230"/></svg><b>医療・研究施設</b><span>クリーン環境・検査灯</span></a></li>
+        <li><a href="products.html?use=光学部品（OEM）"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="14" fill="#0d1230"/><circle cx="22" cy="22" r="7" fill="#f2a93b"/></svg><b>光学部品（OEM）</b><span>レンズ・拡散板・反射板</span></a></li>
+      </ul>
+      <p style="margin-top:24px"><a class="btn btn-primary" href="products.html">すべての製品を見る</a>　<a href="contact.html">お問い合わせはこちら</a></p>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p class="fiction">このサイトは制作例です。会社名・製品・人物はすべて架空です。</p>
+    <ul><li><a href="index.html">トップ</a></li><li><a href="products.html">製品をさがす</a></li><li><a href="contact.html">お問い合わせ（デモ）</a></li></ul>
+    <small>© 灯野工業（架空）／ ポートフォリオ用デモサイト</small>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script type="module" src="js/story.js"></script>
+</body>
+</html>
