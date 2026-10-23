@@ -1,11 +1,11 @@
 {
  "summary": {
-  "checks": 85,
-  "passed": 85,
+  "checks": 92,
+  "passed": 92,
   "failed": 0,
   "consoleErrors": 0,
   "externalRequests": 0,
-  "screenshots": 58
+  "screenshots": 62
  },
  "results": [
   {
@@ -116,7 +116,7 @@
   {
    "name": "場面4 t=0.5 進行表示が場面4 @768",
    "ok": true,
-   "detail": "current=3 bubbles=0,0,0,0,0,0,0.33,0"
+   "detail": "current=3 bubbles=0,0,0,0,0,0,0.2,0"
   },
   {
    "name": "ストーリー外では進行表示を隠す @768",
@@ -226,7 +226,7 @@
   {
    "name": "演出をスキップ → 製品入口が画面内に見える @375",
    "ok": true,
-   "detail": "{\"top\":216,\"hdr\":102,\"y\":4534,\"focus\":\"products-entry\"}"
+   "detail": "{\"top\":214,\"hdr\":99,\"y\":4722,\"focus\":\"products-entry\"}"
   },
   {
    "name": "「製品をさがす」常時表示 @375",
@@ -241,7 +241,7 @@
   {
    "name": "演出をスキップ → 製品入口が画面内に見える @1280",
    "ok": true,
-   "detail": "{\"top\":142,\"hdr\":65,\"y\":4408,\"focus\":\"products-entry\"}"
+   "detail": "{\"top\":160,\"hdr\":72,\"y\":5045,\"focus\":\"products-entry\"}"
   },
   {
    "name": "「製品をさがす」常時表示 @1280",
@@ -271,12 +271,12 @@
   {
    "name": "prefers-reduced-motion: ピン/スクラブ/Lenisなし・全文表示 @375",
    "ok": true,
-   "detail": "{\"scrub\":false,\"st\":0,\"pos\":\"relative\",\"motion\":\"reduce\",\"pressed\":\"true\",\"h\":2668,\"bubblesVisible\":true,\"lenis\":false}"
+   "detail": "{\"scrub\":false,\"st\":0,\"pos\":\"relative\",\"motion\":\"reduce\",\"pressed\":\"true\",\"h\":2960,\"bubblesVisible\":true,\"lenis\":false}"
   },
   {
    "name": "prefers-reduced-motion: ピン/スクラブ/Lenisなし・全文表示 @1280",
    "ok": true,
-   "detail": "{\"scrub\":false,\"st\":0,\"pos\":\"relative\",\"motion\":\"reduce\",\"pressed\":\"true\",\"h\":2816,\"bubblesVisible\":true,\"lenis\":false}"
+   "detail": "{\"scrub\":false,\"st\":0,\"pos\":\"relative\",\"motion\":\"reduce\",\"pressed\":\"true\",\"h\":3200,\"bubblesVisible\":true,\"lenis\":false}"
   },
   {
    "name": "手動「動きを減らす」ON：静止レイアウト＋localStorage保存",
@@ -396,7 +396,7 @@
   {
    "name": "最近見た製品に表示",
    "ok": true,
-   "detail": "{\"hidden\":false,\"txt\":\"TM-SL-6001　LED街路灯 60W 電球色\"}"
+   "detail": "{\"hidden\":false,\"txt\":\"TM-SL-6001LED街路灯 60W 電球色\"}"
   },
   {
    "name": "印刷CSS：ヘッダー・操作ボタン非表示、印刷用見出し表示",
@@ -424,7 +424,42 @@
    "detail": ""
   },
   {
+   "name": "確認表示中は入力フォームが見えない",
+   "ok": true,
+   "detail": ""
+  },
+  {
    "name": "フォーム送信でネットワークリクエストなし",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "空送信でエラー表示 @375",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "name": "横スクロールなし contact-errors@375",
+   "ok": true,
+   "detail": "scrollWidth=375 innerWidth=375"
+  },
+  {
+   "name": "確認表示 @375",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "空送信でエラー表示 @768",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "name": "横スクロールなし contact-errors@768",
+   "ok": true,
+   "detail": "scrollWidth=768 innerWidth=768"
+  },
+  {
+   "name": "確認表示 @768",
    "ok": true,
    "detail": ""
   },
@@ -494,6 +529,10 @@
   "screenshots/product-print-preview.png",
   "screenshots/contact-1280-errors.png",
   "screenshots/contact-1280-done.png",
+  "screenshots/contact-375-errors.png",
+  "screenshots/contact-375-done.png",
+  "screenshots/contact-768-errors.png",
+  "screenshots/contact-768-done.png",
   "screenshots/index-1280-focus.png"
  ]
 }

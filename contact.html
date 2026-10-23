@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>お問い合わせ（デモ）｜灯野工業（制作例）</title>
+<meta name="theme-color" content="#f2efe9">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/products.css">
@@ -12,49 +13,75 @@
 <a class="skip" href="#main">本文へスキップ</a>
 <header class="site-header" id="site-header">
   <div class="hdr-main">
-    <a class="brand" href="index.html" aria-label="灯野工業 トップへ">
-      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#f2a93b"/><path d="M16 5c3 4 5 6 0 11-5-5-3-7 0-11Z" fill="#fff3c4"/><rect x="11" y="17" width="10" height="9" rx="3" fill="#2a1700"/></svg>
-      <span>灯野工業<small>Tomoshino Industries（架空）</small></span>
+    <a class="brand" href="index.html" aria-label="灯野工業（架空） トップへ">
+      <svg viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x=".5" y=".5" width="33" height="33" fill="#111214" stroke="#f2efe9" stroke-opacity=".25"/><path d="M12 13 7.5 27h19L22 13Z" fill="#e9a23b" opacity=".38"/><path d="M8 12.5h18" stroke="#f2efe9" stroke-width="1.4"/><circle cx="17" cy="12.5" r="3.2" fill="#e9a23b"/></svg>
+      <span class="wm"><b>灯野工業</b><small>Tomoshino（架空）</small></span>
     </a>
     <a class="btn btn-primary" href="products.html">製品をさがす</a>
   </div>
   <div class="hdr-tools">
     <a href="index.html">トップ（演出あり）</a>
+    <span class="sep" aria-hidden="true"></span>
     <button type="button" class="tool-btn" id="motion-toggle" aria-pressed="false">動きを減らす</button>
     <a href="contact.html" class="hide-sm" aria-current="page">お問い合わせ</a>
   </div>
 </header>
 
-<main id="main" class="wrap page-main">
-  <h1>お問い合わせ</h1>
-  <p class="note"><strong>これはデモです。</strong>入力内容はどこにも送信・保存されません（この画面内で確認表示するだけです）。会社・製品はすべて架空です。</p>
-
-  <div class="done" id="done" hidden tabindex="-1" role="status">
-    <h2>確認画面（デモ：送信されていません）</h2>
-    <p>実際のサイトであれば、ここで送信が完了します。このデモではデータをどこにも送っていません。</p>
-    <dl id="done-list"></dl>
-    <p><button type="button" class="btn btn-dark" id="back">入力画面に戻る</button></p>
+<main id="main" class="page-main">
+ <div class="wrap">
+  <div class="page-head">
+    <div><p class="eyebrow"><b>Contact</b></p><h1>お問い合わせ</h1></div>
+    <p class="note"><strong>これはデモです。</strong>入力内容はどこにも送信・保存されません（この画面内で確認表示するだけです）。会社・製品はすべて架空です。</p>
   </div>
 
-  <form class="form" id="form" novalidate>
-    <div class="errsum" id="errsum" hidden role="alert" tabindex="-1"></div>
-    <div class="field"><label for="company">会社名<span class="req">（必須）</span></label><input id="company" name="company" type="text" autocomplete="organization" required aria-describedby="company-err"><p class="err" id="company-err"></p></div>
-    <div class="field"><label for="name">お名前<span class="req">（必須）</span></label><input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err"><p class="err" id="name-err"></p></div>
-    <div class="field"><label for="email">メールアドレス<span class="req">（必須）</span></label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err"><p class="err" id="email-err"></p></div>
-    <div class="field"><label for="tel">電話番号（任意）</label><input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="tel-hint tel-err"><span class="hint" id="tel-hint">例：03-0000-0000（数字とハイフン）</span><p class="err" id="tel-err"></p></div>
-    <div class="field"><label for="kind">ご相談の種類<span class="req">（必須）</span></label>
-      <select id="kind" name="kind" required aria-describedby="kind-err"><option value="">選択してください</option><option>製品の仕様・在庫について</option><option>見積り・納期について</option><option>光学部品のOEM相談</option><option>その他</option></select><p class="err" id="kind-err"></p></div>
-    <div class="field"><label for="sku">品番（任意）</label><input id="sku" name="sku" type="text" autocomplete="off" aria-describedby="sku-hint"><span class="hint" id="sku-hint" aria-live="polite">製品ページから来た場合は自動で入ります。</span></div>
-    <div class="field"><label for="message">お問い合わせ内容<span class="req">（必須）</span></label><textarea id="message" name="message" required aria-describedby="message-err"></textarea><p class="err" id="message-err"></p></div>
-    <div class="field"><label class="check"><input type="checkbox" id="agree" name="agree" required aria-describedby="agree-err"> 入力内容がデモであり送信されないことを理解しました<span class="req">（必須）</span></label><p class="err" id="agree-err"></p></div>
-    <div><button class="btn btn-dark" type="submit">確認する（送信はされません）</button></div>
-  </form>
+  <div class="contact">
+    <aside class="contact-aside" aria-labelledby="flow-title">
+      <h2 id="flow-title">ご相談の流れ</h2>
+      <ol class="steps">
+        <li><b>フォームに入力</b><span>品番がわかれば添えてください。製品ページから来た場合は自動で入ります。</span></li>
+        <li><b>担当者から連絡</b><span>実際のサイトであれば、営業日2日以内に返信する想定です。</span></li>
+        <li><b>仕様・見積りのご提案</b><span>設置環境を伺い、機種と台数をご提案します。</span></li>
+      </ol>
+      <p class="demo-note">このフォームは制作例です。「確認する」を押しても送信されず、入力内容の確認表示だけを行います。</p>
+    </aside>
+
+    <div>
+      <div class="done" id="done" hidden tabindex="-1" role="status">
+        <span class="badge">DEMO</span>
+        <h2>確認画面（デモ：送信されていません）</h2>
+        <p>実際のサイトであれば、ここで送信が完了します。このデモではデータをどこにも送っていません。</p>
+        <dl id="done-list"></dl>
+        <p><button type="button" class="btn btn-dark" id="back">入力画面に戻る</button></p>
+      </div>
+
+      <form class="form" id="form" novalidate>
+        <div class="errsum" id="errsum" hidden role="alert" tabindex="-1"></div>
+        <div class="field"><label for="company">会社名<span class="req">必須</span></label><input id="company" name="company" type="text" autocomplete="organization" required aria-describedby="company-err"><p class="err" id="company-err"></p></div>
+        <div class="field"><label for="name">お名前<span class="req">必須</span></label><input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err"><p class="err" id="name-err"></p></div>
+        <div class="field"><label for="email">メールアドレス<span class="req">必須</span></label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err"><p class="err" id="email-err"></p></div>
+        <div class="field"><label for="tel">電話番号<span class="opt">任意</span></label><input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="tel-hint tel-err"><span class="hint" id="tel-hint">例：03-0000-0000（数字とハイフン）</span><p class="err" id="tel-err"></p></div>
+        <div class="field"><label for="kind">ご相談の種類<span class="req">必須</span></label>
+          <select id="kind" name="kind" required aria-describedby="kind-err"><option value="">選択してください</option><option>製品の仕様・在庫について</option><option>見積り・納期について</option><option>光学部品のOEM相談</option><option>その他</option></select><p class="err" id="kind-err"></p></div>
+        <div class="field"><label for="sku">品番<span class="opt">任意</span></label><input id="sku" name="sku" type="text" autocomplete="off" aria-describedby="sku-hint"><span class="hint" id="sku-hint" aria-live="polite">製品ページから来た場合は自動で入ります。</span></div>
+        <div class="field"><label for="message">お問い合わせ内容<span class="req">必須</span></label><textarea id="message" name="message" required aria-describedby="message-err"></textarea><p class="err" id="message-err"></p></div>
+        <div class="field"><label class="check"><input type="checkbox" id="agree" name="agree" required aria-describedby="agree-err"> <span>入力内容がデモであり送信されないことを理解しました<span class="req">必須</span></span></label><p class="err" id="agree-err"></p></div>
+        <div class="submit"><button class="btn btn-dark" type="submit">確認する（送信はされません）<span class="arr" aria-hidden="true"></span></button><p>送信・保存は行いません。</p></div>
+      </form>
+    </div>
+  </div>
+ </div>
 </main>
 
 <footer class="site-footer">
   <div class="inner">
-    <p class="fiction">このサイトは制作例です。会社名・製品・人物はすべて架空です。</p>
-    <ul><li><a href="index.html">トップ</a></li><li><a href="products.html">製品をさがす</a></li><li><a href="contact.html">お問い合わせ（デモ）</a></li></ul>
+    <div class="f-top">
+      <div>
+        <a class="brand" href="index.html" aria-label="灯野工業（架空） トップへ"><svg viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x=".5" y=".5" width="33" height="33" fill="#111214" stroke="#f2efe9" stroke-opacity=".25"/><path d="M12 13 7.5 27h19L22 13Z" fill="#e9a23b" opacity=".38"/><path d="M8 12.5h18" stroke="#f2efe9" stroke-width="1.4"/><circle cx="17" cy="12.5" r="3.2" fill="#e9a23b"/></svg><span class="wm"><b>灯野工業</b><small>Tomoshino（架空）</small></span></a>
+        <p class="f-lead">照明器具と光学部品の設計・製造。使う場所に合わせた、ちょうどいい光を。</p>
+      </div>
+      <nav aria-label="フッターメニュー"><h2>Menu</h2><ul><li><a href="index.html">トップ</a></li><li><a href="products.html">製品をさがす</a></li><li><a href="contact.html">お問い合わせ（デモ）</a></li></ul></nav>
+      <div><h2 class="sr-only">注記</h2><p class="fiction">このサイトは制作例です。会社名・製品・人物はすべて架空です。</p></div>
+    </div>
     <small>© 灯野工業（架空）／ ポートフォリオ用デモサイト</small>
   </div>
 </footer>

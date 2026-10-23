@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>製品をさがす｜灯野工業（制作例）</title>
 <meta name="description" content="用途・設置環境・色温度・IP等級で絞り込める製品検索。品番検索、比較（3件まで）、お気に入り対応。すべて架空の製品です。">
+<meta name="theme-color" content="#f2efe9">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/products.css">
@@ -13,24 +14,29 @@
 <a class="skip" href="#main">本文へスキップ</a>
 <header class="site-header" id="site-header">
   <div class="hdr-main">
-    <a class="brand" href="index.html" aria-label="灯野工業 トップへ">
-      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#f2a93b"/><path d="M16 5c3 4 5 6 0 11-5-5-3-7 0-11Z" fill="#fff3c4"/><rect x="11" y="17" width="10" height="9" rx="3" fill="#2a1700"/></svg>
-      <span>灯野工業<small>Tomoshino Industries（架空）</small></span>
+    <a class="brand" href="index.html" aria-label="灯野工業（架空） トップへ">
+      <svg viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x=".5" y=".5" width="33" height="33" fill="#111214" stroke="#f2efe9" stroke-opacity=".25"/><path d="M12 13 7.5 27h19L22 13Z" fill="#e9a23b" opacity=".38"/><path d="M8 12.5h18" stroke="#f2efe9" stroke-width="1.4"/><circle cx="17" cy="12.5" r="3.2" fill="#e9a23b"/></svg>
+      <span class="wm"><b>灯野工業</b><small>Tomoshino（架空）</small></span>
     </a>
     <a class="btn btn-primary" href="products.html" aria-current="page">製品をさがす</a>
   </div>
   <div class="hdr-tools">
     <a href="index.html">トップ（演出あり）</a>
+    <span class="sep" aria-hidden="true"></span>
     <button type="button" class="tool-btn" id="motion-toggle" aria-pressed="false">動きを減らす</button>
     <a href="contact.html" class="hide-sm">お問い合わせ</a>
   </div>
 </header>
 
-<main id="main" class="wrap page-main">
-  <h1>製品をさがす</h1>
-  <p class="note">演出のない検索ページです。条件を変えると結果がすぐ更新され、URLをコピーすれば同じ絞り込みを共有できます。掲載製品はすべて架空です。</p>
+<main id="main" class="page-main">
+ <div class="wrap">
+  <div class="page-head">
+    <div><p class="eyebrow"><b>Catalog</b></p><h1>製品をさがす</h1></div>
+    <p class="note">演出のない検索ページです。条件を変えると結果がすぐ更新され、URLをコピーすれば同じ絞り込みを共有できます。掲載製品はすべて架空です。</p>
+  </div>
 
-  <form id="filter-form" role="search" aria-label="製品検索" autocomplete="off">
+  <div class="catalog">
+  <form id="filter-form" class="side" role="search" aria-label="製品検索" autocomplete="off">
     <div class="searchbar">
       <label for="q">品番・キーワード</label>
       <input id="q" name="q" type="search" placeholder="例：TM-LD-1203 ／ 防湿 ／ 投光器">
@@ -54,25 +60,29 @@
     </details>
   </form>
 
-  <div class="results-head">
-    <p id="count" role="status" aria-live="polite"></p>
-    <label>並び替え
-      <select id="sort"><option value="sku">品番順</option><option value="price-asc">価格帯が低い順</option><option value="price-desc">価格帯が高い順</option><option value="watt">消費電力が小さい順</option></select>
-    </label>
+  <div class="results">
+    <div class="results-head">
+      <p id="count" role="status" aria-live="polite"></p>
+      <label>並び替え
+        <select id="sort"><option value="sku">品番順</option><option value="price-asc">価格帯が低い順</option><option value="price-desc">価格帯が高い順</option><option value="watt">消費電力が小さい順</option></select>
+      </label>
+    </div>
+
+    <section id="compare-panel" hidden aria-labelledby="cmp-title">
+      <h2 id="cmp-title">製品を比較（最大3件）</h2>
+      <div id="compare-body"></div>
+      <p><button type="button" class="pill" id="cmp-close">比較表を閉じる</button></p>
+    </section>
+
+    <ul id="results" class="grid" aria-label="検索結果"></ul>
+
+    <section class="recent" id="recent" hidden aria-labelledby="recent-title">
+      <h2 id="recent-title">最近見た製品</h2>
+      <ul id="recent-list"></ul>
+    </section>
   </div>
-
-  <section id="compare-panel" hidden aria-labelledby="cmp-title">
-    <h2 id="cmp-title">製品を比較（最大3件）</h2>
-    <div id="compare-body"></div>
-    <p><button type="button" class="pill" id="cmp-close">比較表を閉じる</button></p>
-  </section>
-
-  <ul id="results" class="grid" aria-label="検索結果"></ul>
-
-  <section class="recent" id="recent" hidden aria-labelledby="recent-title">
-    <h2 id="recent-title">最近見た製品</h2>
-    <ul id="recent-list"></ul>
-  </section>
+  </div>
+ </div>
 </main>
 
 <div class="compare-bar" id="compare-bar" hidden role="region" aria-label="比較リスト">
@@ -84,8 +94,14 @@
 
 <footer class="site-footer">
   <div class="inner">
-    <p class="fiction">このサイトは制作例です。会社名・製品・人物はすべて架空です。</p>
-    <ul><li><a href="index.html">トップ</a></li><li><a href="products.html">製品をさがす</a></li><li><a href="contact.html">お問い合わせ（デモ）</a></li></ul>
+    <div class="f-top">
+      <div>
+        <a class="brand" href="index.html" aria-label="灯野工業（架空） トップへ"><svg viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x=".5" y=".5" width="33" height="33" fill="#111214" stroke="#f2efe9" stroke-opacity=".25"/><path d="M12 13 7.5 27h19L22 13Z" fill="#e9a23b" opacity=".38"/><path d="M8 12.5h18" stroke="#f2efe9" stroke-width="1.4"/><circle cx="17" cy="12.5" r="3.2" fill="#e9a23b"/></svg><span class="wm"><b>灯野工業</b><small>Tomoshino（架空）</small></span></a>
+        <p class="f-lead">照明器具と光学部品の設計・製造。使う場所に合わせた、ちょうどいい光を。</p>
+      </div>
+      <nav aria-label="フッターメニュー"><h2>Menu</h2><ul><li><a href="index.html">トップ</a></li><li><a href="products.html">製品をさがす</a></li><li><a href="contact.html">お問い合わせ（デモ）</a></li></ul></nav>
+      <div><h2 class="sr-only">注記</h2><p class="fiction">このサイトは制作例です。会社名・製品・人物はすべて架空です。</p></div>
+    </div>
     <small>© 灯野工業（架空）／ ポートフォリオ用デモサイト</small>
   </div>
 </footer>

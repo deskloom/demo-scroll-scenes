@@ -31,7 +31,7 @@ const HEIGHT = { 375: 740, 768: 1024, 1280: 800 };
 
 let browser;
 try {
-  browser = await chromium.launch({ channel: 'chrome', headless: true });
+  browser = await chromium.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH, headless: true } : { channel: 'chrome', headless: true });
 } catch (e) {
   console.error('Chrome を起動できませんでした:', e.message); server.close(); process.exit(2);
 }
@@ -58,6 +58,8 @@ async function open(w, url, opts = {}) {
 }
 async function shot(page, name, opts = {}) {
   const file = path.join(SHOTS, name + '.png');
+  // 全体撮影は先頭から（固定ヘッダーが途中に写り込まないように）
+  if (opts.full) { await page.evaluate(() => window.scrollTo(0, 0)); await sleep(150); }
   await page.screenshot({ path: file, fullPage: !!opts.full });
   shots.push('screenshots/' + name + '.png');
 }
@@ -260,8 +262,25 @@ for (const w of [375, 768]) {
   await page.click('button[type=submit]'); await sleep(200);
   const done = await page.evaluate(() => ({ done: !document.getElementById('done').hidden, form: document.getElementById('form').hidden, txt: document.getElementById('done').textContent }));
   check('送信後はデモ確認表示（送信しない）', done.done && done.form && done.txt.includes('送信されていません') && done.txt.includes('TM-HB-2101'), '');
+  check('確認表示中は入力フォームが見えない', (await page.isVisible('#done')) && !(await page.isVisible('#form')));
   check('フォーム送信でネットワークリクエストなし', posts.length === 0, posts.join(','));
   await shot(page, 'contact-1280-done', { full: true });
+  await ctx.close();
+}
+
+for (const w of [375, 768]) {
+  const { page, ctx } = await open(w, 'contact.html?sku=TM-HB-2101');
+  await page.click('button[type=submit]'); await sleep(200);
+  const n = await page.evaluate(() => document.querySelectorAll('.err:not(:empty)').length);
+  check(`空送信でエラー表示 @${w}`, n === 6, String(n));
+  await noOverflow(page, `contact-errors@${w}`);
+  await shot(page, `contact-${w}-errors`, { full: true });
+  await page.fill('#company', '例）架空商事'); await page.fill('#name', '山田 太郎'); await page.fill('#email', 'taro@example.com');
+  await page.fill('#message', 'TM-HB-2101 の納期を知りたいです。よろしくお願いします。');
+  await page.selectOption('#kind', { index: 2 }); await page.check('#agree');
+  await page.click('button[type=submit]'); await sleep(200);
+  check(`確認表示 @${w}`, (await page.isVisible('#done')) && !(await page.isVisible('#form')));
+  await shot(page, `contact-${w}-done`, { full: true });
   await ctx.close();
 }
 

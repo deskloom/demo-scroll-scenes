@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>製品詳細｜灯野工業（制作例）</title>
+<meta name="theme-color" content="#f2efe9">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/products.css">
@@ -12,29 +13,38 @@
 <a class="skip" href="#main">本文へスキップ</a>
 <header class="site-header" id="site-header">
   <div class="hdr-main">
-    <a class="brand" href="index.html" aria-label="灯野工業 トップへ">
-      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#f2a93b"/><path d="M16 5c3 4 5 6 0 11-5-5-3-7 0-11Z" fill="#fff3c4"/><rect x="11" y="17" width="10" height="9" rx="3" fill="#2a1700"/></svg>
-      <span>灯野工業<small>Tomoshino Industries（架空）</small></span>
+    <a class="brand" href="index.html" aria-label="灯野工業（架空） トップへ">
+      <svg viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x=".5" y=".5" width="33" height="33" fill="#111214" stroke="#f2efe9" stroke-opacity=".25"/><path d="M12 13 7.5 27h19L22 13Z" fill="#e9a23b" opacity=".38"/><path d="M8 12.5h18" stroke="#f2efe9" stroke-width="1.4"/><circle cx="17" cy="12.5" r="3.2" fill="#e9a23b"/></svg>
+      <span class="wm"><b>灯野工業</b><small>Tomoshino（架空）</small></span>
     </a>
     <a class="btn btn-primary" href="products.html">製品をさがす</a>
   </div>
   <div class="hdr-tools">
     <a href="index.html">トップ（演出あり）</a>
+    <span class="sep" aria-hidden="true"></span>
     <button type="button" class="tool-btn" id="motion-toggle" aria-pressed="false">動きを減らす</button>
     <a href="contact.html" class="hide-sm">お問い合わせ</a>
   </div>
 </header>
 
-<main id="main" class="wrap page-main">
-  <p class="crumbs"><a href="products.html">製品をさがす</a> &gt; <span id="crumb">製品詳細</span></p>
+<main id="main" class="page-main">
+ <div class="wrap">
+  <p class="crumbs"><a href="index.html">トップ</a><span class="sep" aria-hidden="true">/</span><a href="products.html">製品をさがす</a><span class="sep" aria-hidden="true">/</span><span id="crumb">製品詳細</span></p>
   <p class="print-only"><strong>灯野工業（架空）製品仕様　※制作例・ダミー資料</strong></p>
   <div id="detail" aria-live="polite">読み込み中…</div>
+ </div>
 </main>
 
 <footer class="site-footer">
   <div class="inner">
-    <p class="fiction">このサイトは制作例です。会社名・製品・人物はすべて架空です。</p>
-    <ul><li><a href="index.html">トップ</a></li><li><a href="products.html">製品をさがす</a></li><li><a href="contact.html">お問い合わせ（デモ）</a></li></ul>
+    <div class="f-top">
+      <div>
+        <a class="brand" href="index.html" aria-label="灯野工業（架空） トップへ"><svg viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x=".5" y=".5" width="33" height="33" fill="#111214" stroke="#f2efe9" stroke-opacity=".25"/><path d="M12 13 7.5 27h19L22 13Z" fill="#e9a23b" opacity=".38"/><path d="M8 12.5h18" stroke="#f2efe9" stroke-width="1.4"/><circle cx="17" cy="12.5" r="3.2" fill="#e9a23b"/></svg><span class="wm"><b>灯野工業</b><small>Tomoshino（架空）</small></span></a>
+        <p class="f-lead">照明器具と光学部品の設計・製造。使う場所に合わせた、ちょうどいい光を。</p>
+      </div>
+      <nav aria-label="フッターメニュー"><h2>Menu</h2><ul><li><a href="index.html">トップ</a></li><li><a href="products.html">製品をさがす</a></li><li><a href="contact.html">お問い合わせ（デモ）</a></li></ul></nav>
+      <div><h2 class="sr-only">注記</h2><p class="fiction">このサイトは制作例です。会社名・製品・人物はすべて架空です。</p></div>
+    </div>
     <small>© 灯野工業（架空）／ ポートフォリオ用デモサイト</small>
   </div>
 </footer>

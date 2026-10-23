@@ -1,5 +1,5 @@
 // products.html：絞り込み・検索・比較・お気に入り・最近見た製品
-import { initChrome, loadProducts, store, save, cctText, wattText, lumenText, priceMark, productArtEl, h } from './common.js';
+import { initChrome, loadProducts, store, save, cctText, wattText, lumenText, priceMark, productArtEl, favButton, h } from './common.js';
 
 initChrome();
 
@@ -68,22 +68,23 @@ function sorted(list) {
 function card(p) {
   const inCmp = compare.includes(p.id), full = compare.length >= MAX_COMPARE && !inCmp;
   const fav = favs.has(p.id);
+  const url = 'product.html?id=' + encodeURIComponent(p.id);
   const dd = (k, v) => [h('dt', {}, k), h('dd', {}, v)];
   return h('li', { class: 'pcard' }, h('article', { 'aria-label': p.id + ' ' + p.name },
-    h('div', { class: 'art' }, productArtEl(p)),
-    h('p', { class: 'sku' }, p.id),
-    h('h2', {}, h('a', { href: 'product.html?id=' + encodeURIComponent(p.id) }, p.name)),
+    h('a', { class: 'art', href: url, tabindex: '-1', 'aria-hidden': 'true' }, productArtEl(p)),
+    h('div', { class: 'meta' }, h('p', { class: 'sku' }, p.id), h('span', { class: 'type' }, p.type)),
+    h('h2', {}, h('a', { href: url }, p.name)),
     h('p', { class: 'tags' }, p.use.join('・') + ' ／ ' + p.env.join('・')),
     h('dl', { class: 'mini' }, dd('色温度', cctText(p)), dd('消費電力', wattText(p)), dd('IP等級', 'IP' + p.ip), dd('価格帯', priceMark(p))),
     h('div', { class: 'actions' },
       h('label', { class: 'check' },
         h('input', { type: 'checkbox', 'data-cmp': p.id, checked: inCmp, disabled: full, title: full ? '比較は3件までです' : null }), ' 比較に追加'),
-      h('button', { type: 'button', class: 'pill', 'data-fav': p.id, 'aria-pressed': String(fav), 'aria-label': p.id + ' をお気に入りにする' }, fav ? '★ お気に入り' : '☆ お気に入り'))));
+      favButton({ 'data-fav': p.id, 'aria-label': p.id + ' をお気に入りにする' }, fav))));
 }
 
 function render() {
   const list = sorted(products.filter(matches));
-  $('count').textContent = list.length + '件の製品が見つかりました（全' + products.length + '件）';
+  $('count').replaceChildren(h('span', { class: 'n' }, String(list.length)), '件の製品が見つかりました（全' + products.length + '件）');
   $('results').replaceChildren(...(list.length ? list.map(card)
     : [h('li', { class: 'empty' }, '条件に合う製品がありません。条件をゆるめるか、「条件をすべてクリア」を押してください。')]));
   renderCompareBar();
@@ -99,7 +100,7 @@ function renderCompareBar() {
   $('cmp-open').disabled = compare.length < 2;
   $('cmp-open').title = compare.length < 2 ? '2件以上選ぶと比較できます' : '';
   if (!$('compare-panel').hidden) renderCompareTable();
-  document.body.style.paddingBottom = compare.length ? '64px' : '';
+  document.body.style.paddingBottom = compare.length ? bar.offsetHeight + 'px' : '';
 }
 function renderCompareTable() {
   const items = compare.map((id) => products.find((p) => p.id === id)).filter(Boolean);
@@ -116,7 +117,7 @@ function renderCompareTable() {
     return h('tr', { class: diff ? 'diff' : null }, h('th', { scope: 'row' }, label, diff ? h('span', { class: 'sr-only' }, '（差があります）') : null), vals.map((v) => h('td', {}, v)));
   });
   $('compare-body').replaceChildren(
-    h('p', { class: 'note' }, '黄色の行は製品間で値が違う項目です。'),
+    h('p', { class: 'note' }, '● 印と色のついた行は、製品間で値が違う項目です。'),
     h('table', { class: 'spec' }, h('caption', { class: 'sr-only' }, '製品の比較表'),
       h('thead', {}, h('tr', {}, h('th', { scope: 'col' }, '項目'), head)), h('tbody', {}, body)));
 }
@@ -133,7 +134,7 @@ function renderRecent() {
   const ids = store('tm-recent', []);
   const items = ids.map((id) => products.find((p) => p.id === id)).filter(Boolean);
   $('recent').hidden = items.length === 0;
-  $('recent-list').replaceChildren(...items.map((p) => h('li', {}, h('a', { href: 'product.html?id=' + encodeURIComponent(p.id) }, p.id + '　' + p.name))));
+  $('recent-list').replaceChildren(...items.map((p) => h('li', {}, h('a', { href: 'product.html?id=' + encodeURIComponent(p.id) }, h('span', { class: 'sku' }, p.id), p.name))));
 }
 
 /* ---------- フィルタUIの生成と同期 ---------- */
